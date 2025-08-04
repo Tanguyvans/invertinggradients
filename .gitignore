@@ -142,3 +142,5 @@ dmypy.json
 *.zip
 
 scripts/
+
+/datasets
