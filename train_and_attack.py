@@ -17,8 +17,9 @@ import inversefed
 # Configuration
 DATASET_DIR = './datasets'  # Local dataset directory
 CIFAR10_PATH = os.path.join(DATASET_DIR, 'cifar10')
-MODEL_SAVE_PATH = 'models/simple_convnet_cifar10.pth'
-EPOCHS = 5  # Train for just a few epochs for demonstration
+MODEL_NAME = 'ResNet20-4'  # Changed from ConvNet to ResNet20-4
+MODEL_SAVE_PATH = f'models/{MODEL_NAME.lower()}_cifar10.pth'
+EPOCHS = 20  # Increased for better training with ResNet
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def download_cifar10_if_needed():
@@ -96,13 +97,13 @@ def train_model():
     print()
     
     # Create model
-    model, model_seed = inversefed.construct_model('ConvNet', num_classes=10, num_channels=3)
+    model, model_seed = inversefed.construct_model(MODEL_NAME, num_classes=10, num_channels=3)
     model.to(**setup)
     
     # Count parameters
     total_params = sum(p.numel() for p in model.parameters())
     trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print(f"Model: ConvNet")
+    print(f"Model: {MODEL_NAME}")
     print(f"Total parameters: {total_params:,}")
     print(f"Trainable parameters: {trainable_params:,}")
     print()
@@ -117,7 +118,7 @@ def train_model():
         
         # Custom training loop with detailed progress
         optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=5e-4)
-        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[3, 5], gamma=0.1)
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[10, 15], gamma=0.1)
         
         for epoch in range(EPOCHS):
             # Training phase
@@ -239,7 +240,8 @@ def perform_attack(model, validloader, target_id=42, num_restarts=8):
     
     # Compute gradient
     model.zero_grad()
-    loss_fn = inversefed.Classification()
+    from inversefed.data.loss import Classification
+    loss_fn = Classification()
     outputs = model(ground_truth)
     loss, _, _ = loss_fn(outputs, labels)
     input_gradient = torch.autograd.grad(loss, model.parameters())
@@ -342,7 +344,8 @@ def perform_batch_attack(model, validloader, batch_size=8, num_restarts=4):
     
     # Compute gradient
     model.zero_grad()
-    loss_fn = inversefed.Classification()
+    from inversefed.data.loss import Classification
+    loss_fn = Classification()
     outputs = model(ground_truth)
     loss, _, _ = loss_fn(outputs, labels)
     input_gradient = torch.autograd.grad(loss, model.parameters())
