@@ -6,7 +6,7 @@ This script demonstrates the privacy vulnerability in federated learning.
 import torch
 import torchvision
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt  # Commented out to avoid dependency issues
 from PIL import Image
 import os
 import time
@@ -46,34 +46,15 @@ def download_cifar10_if_needed():
 
 def plot_images(tensor, title="Images", save_path=None):
     """Plot and optionally save images."""
-    # Get data stats for denormalization
-    dm = torch.as_tensor(inversefed.consts.cifar10_mean)[:, None, None]
-    ds = torch.as_tensor(inversefed.consts.cifar10_std)[:, None, None]
-    
-    # Clone and denormalize
-    tensor = tensor.clone().detach().cpu()
-    tensor = tensor * ds + dm
-    tensor = torch.clamp(tensor, 0, 1)
-    
-    # Plot
-    if tensor.shape[0] == 1:
-        plt.figure(figsize=(5, 5))
-        plt.imshow(tensor[0].permute(1, 2, 0))
-        plt.title(title)
-        plt.axis('off')
-    else:
-        fig, axes = plt.subplots(1, min(tensor.shape[0], 8), figsize=(16, 4))
-        if tensor.shape[0] == 1:
-            axes = [axes]
-        for i, (im, ax) in enumerate(zip(tensor[:8], axes)):
-            ax.imshow(im.permute(1, 2, 0))
-            ax.set_title(f"Image {i}")
-            ax.axis('off')
-        fig.suptitle(title)
-    
+    print(f"[PLOT] {title} - Shape: {tensor.shape}")
     if save_path:
-        plt.savefig(save_path, dpi=150, bbox_inches='tight')
-    plt.show()
+        # Save using torchvision instead of matplotlib
+        dm = torch.as_tensor(inversefed.consts.cifar10_mean)[:, None, None]
+        ds = torch.as_tensor(inversefed.consts.cifar10_std)[:, None, None]
+        tensor_denorm = torch.clamp(tensor * ds + dm, 0, 1)
+        torchvision.utils.save_image(tensor_denorm, save_path)
+        print(f"[SAVED] Image saved to {save_path}")
+    # Skip actual plotting to avoid matplotlib dependency
 
 def train_model():
     """Train a simple ConvNet on CIFAR-10."""
