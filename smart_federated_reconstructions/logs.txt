@@ -1,0 +1,992 @@
+=== SMART FEDERATED GRADIENT ATTACK ===
+Device: cuda
+Model: ConvNet
+Analyzing gradient vulnerability and optimizing attack strategy...
+
+=== VULNERABILITY ANALYSIS ===
+Rank  Round  Client  Loss     Acc%   Grad Norm    Vulnerability Priority  
+-------------------------------------------------------------------------------------
+1     5      0       2.1989   30.0   2.3838       5.2418        SMART     
+2     5      1       1.0424   60.0   2.0938       2.1825        STANDARD  
+3     1      0       2.3083   10.0   0.0314       0.0726        STANDARD  
+4     1      1       2.3120   20.0   0.0278       0.0642        STANDARD  
+5     10     1       0.0311   100.0  0.7284       0.0227        STANDARD  
+6     10     0       0.0024   100.0  0.0223       0.0001        STANDARD  
+
+=== SMART ATTACK EXECUTION ===
+
+[1/6] Attacking target...
+
+================================================================================
+=== SMART ATTACK: Round 5, Client 0 ===
+Vulnerability Score: 5.2418 (Loss: 2.1989, Grad Norm: 2.3838)
+Attack Config: SMART
+================================================================================
+Currently evaluating -------------------------------:
+Sunday, 10. August 2025 03:40PM
+CPUs: 6, GPUs: 1 on 2a37c8f1b8cb.
+GPU : NVIDIA L4
+Loading CIFAR-10 dataset...
+Loading federated data for round 5, client 0...
+Loading ground truth images...
+Setting up model from round 5, client 0...
+Model initialized with random key 1835441685.
+Target Statistics:
+  Batch indices: [6252, 4684, 1731, 4742, 4521, 6340, 6363, 9896, 9485, 9920]
+  Classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Loss: 2.1989
+  Accuracy: 30.00%
+  Gradient norm: 2.3838
+  Vulnerability: 5.2418
+
+Attack Configuration (SMART):
+  Learning rate: 0.15
+  Restarts: 3
+  Max iterations: 30000
+
+Starting smart reconstruction...
+It: 0. Rec. loss: 0.3980.
+It: 500. Rec. loss: 0.0115.
+It: 1000. Rec. loss: 0.0107.
+It: 1500. Rec. loss: 0.0096.
+It: 2000. Rec. loss: 0.0105.
+It: 2500. Rec. loss: 0.0102.
+It: 3000. Rec. loss: 0.0103.
+It: 3500. Rec. loss: 0.0102.
+It: 4000. Rec. loss: 0.0099.
+It: 4500. Rec. loss: 0.0103.
+It: 5000. Rec. loss: 0.0115.
+It: 5500. Rec. loss: 0.0104.
+It: 6000. Rec. loss: 0.0101.
+It: 6500. Rec. loss: 0.0138.
+It: 7000. Rec. loss: 0.0121.
+It: 7500. Rec. loss: 0.0113.
+It: 8000. Rec. loss: 0.0134.
+It: 8500. Rec. loss: 0.0114.
+It: 9000. Rec. loss: 0.0111.
+It: 9500. Rec. loss: 0.0128.
+It: 10000. Rec. loss: 0.0115.
+It: 10500. Rec. loss: 0.0118.
+It: 11000. Rec. loss: 0.0139.
+It: 11500. Rec. loss: 0.0077.
+It: 12000. Rec. loss: 0.0077.
+It: 12500. Rec. loss: 0.0075.
+It: 13000. Rec. loss: 0.0078.
+It: 13500. Rec. loss: 0.0077.
+It: 14000. Rec. loss: 0.0076.
+It: 14500. Rec. loss: 0.0076.
+It: 15000. Rec. loss: 0.0076.
+It: 15500. Rec. loss: 0.0078.
+It: 16000. Rec. loss: 0.0077.
+It: 16500. Rec. loss: 0.0075.
+It: 17000. Rec. loss: 0.0077.
+It: 17500. Rec. loss: 0.0078.
+It: 18000. Rec. loss: 0.0078.
+It: 18500. Rec. loss: 0.0074.
+It: 19000. Rec. loss: 0.0075.
+It: 19500. Rec. loss: 0.0074.
+It: 20000. Rec. loss: 0.0077.
+It: 20500. Rec. loss: 0.0075.
+It: 21000. Rec. loss: 0.0075.
+It: 21500. Rec. loss: 0.0075.
+It: 22000. Rec. loss: 0.0075.
+It: 22500. Rec. loss: 0.0077.
+It: 23000. Rec. loss: 0.0076.
+It: 23500. Rec. loss: 0.0075.
+It: 24000. Rec. loss: 0.0076.
+It: 24500. Rec. loss: 0.0075.
+It: 25000. Rec. loss: 0.0075.
+It: 25500. Rec. loss: 0.0076.
+It: 26000. Rec. loss: 0.0074.
+It: 26500. Rec. loss: 0.0073.
+It: 27000. Rec. loss: 0.0073.
+It: 27500. Rec. loss: 0.0072.
+It: 28000. Rec. loss: 0.0073.
+It: 28500. Rec. loss: 0.0072.
+It: 29000. Rec. loss: 0.0072.
+It: 29500. Rec. loss: 0.0072.
+It: 29999. Rec. loss: 0.0072.
+It: 0. Rec. loss: 0.3967.
+It: 500. Rec. loss: 0.0124.
+It: 1000. Rec. loss: 0.0117.
+It: 1500. Rec. loss: 0.0135.
+It: 2000. Rec. loss: 0.0117.
+It: 2500. Rec. loss: 0.0111.
+It: 3000. Rec. loss: 0.0123.
+It: 3500. Rec. loss: 0.0118.
+It: 4000. Rec. loss: 0.0108.
+It: 4500. Rec. loss: 0.0125.
+It: 5000. Rec. loss: 0.0115.
+It: 5500. Rec. loss: 0.0123.
+It: 6000. Rec. loss: 0.0118.
+It: 6500. Rec. loss: 0.0119.
+It: 7000. Rec. loss: 0.0120.
+It: 7500. Rec. loss: 0.0117.
+It: 8000. Rec. loss: 0.0126.
+It: 8500. Rec. loss: 0.0128.
+It: 9000. Rec. loss: 0.0120.
+It: 9500. Rec. loss: 0.0122.
+It: 10000. Rec. loss: 0.0122.
+It: 10500. Rec. loss: 0.0123.
+It: 11000. Rec. loss: 0.0130.
+It: 11500. Rec. loss: 0.0077.
+It: 12000. Rec. loss: 0.0078.
+It: 12500. Rec. loss: 0.0077.
+It: 13000. Rec. loss: 0.0075.
+It: 13500. Rec. loss: 0.0075.
+It: 14000. Rec. loss: 0.0075.
+It: 14500. Rec. loss: 0.0076.
+It: 15000. Rec. loss: 0.0078.
+It: 15500. Rec. loss: 0.0076.
+It: 16000. Rec. loss: 0.0077.
+It: 16500. Rec. loss: 0.0077.
+It: 17000. Rec. loss: 0.0075.
+It: 17500. Rec. loss: 0.0077.
+It: 18000. Rec. loss: 0.0079.
+It: 18500. Rec. loss: 0.0077.
+It: 19000. Rec. loss: 0.0075.
+It: 19500. Rec. loss: 0.0078.
+It: 20000. Rec. loss: 0.0074.
+It: 20500. Rec. loss: 0.0076.
+It: 21000. Rec. loss: 0.0075.
+It: 21500. Rec. loss: 0.0074.
+It: 22000. Rec. loss: 0.0074.
+It: 22500. Rec. loss: 0.0073.
+It: 23000. Rec. loss: 0.0073.
+It: 23500. Rec. loss: 0.0073.
+It: 24000. Rec. loss: 0.0074.
+It: 24500. Rec. loss: 0.0071.
+It: 25000. Rec. loss: 0.0074.
+It: 25500. Rec. loss: 0.0074.
+It: 26000. Rec. loss: 0.0072.
+It: 26500. Rec. loss: 0.0073.
+It: 27000. Rec. loss: 0.0073.
+It: 27500. Rec. loss: 0.0071.
+It: 28000. Rec. loss: 0.0071.
+It: 28500. Rec. loss: 0.0072.
+It: 29000. Rec. loss: 0.0072.
+It: 29500. Rec. loss: 0.0072.
+It: 29999. Rec. loss: 0.0072.
+It: 0. Rec. loss: 0.4040.
+It: 500. Rec. loss: 0.0127.
+It: 1000. Rec. loss: 0.0133.
+It: 1500. Rec. loss: 0.0123.
+It: 2000. Rec. loss: 0.0126.
+It: 2500. Rec. loss: 0.0117.
+It: 3000. Rec. loss: 0.0135.
+It: 3500. Rec. loss: 0.0120.
+It: 4000. Rec. loss: 0.0117.
+It: 4500. Rec. loss: 0.0132.
+It: 5000. Rec. loss: 0.0122.
+It: 5500. Rec. loss: 0.0116.
+It: 6000. Rec. loss: 0.0148.
+It: 6500. Rec. loss: 0.0124.
+It: 7000. Rec. loss: 0.0120.
+It: 7500. Rec. loss: 0.0138.
+It: 8000. Rec. loss: 0.0126.
+It: 8500. Rec. loss: 0.0120.
+It: 9000. Rec. loss: 0.0132.
+It: 9500. Rec. loss: 0.0115.
+It: 10000. Rec. loss: 0.0115.
+It: 10500. Rec. loss: 0.0130.
+It: 11000. Rec. loss: 0.0117.
+It: 11500. Rec. loss: 0.0076.
+It: 12000. Rec. loss: 0.0075.
+It: 12500. Rec. loss: 0.0078.
+It: 13000. Rec. loss: 0.0075.
+It: 13500. Rec. loss: 0.0076.
+It: 14000. Rec. loss: 0.0075.
+It: 14500. Rec. loss: 0.0079.
+It: 15000. Rec. loss: 0.0076.
+It: 15500. Rec. loss: 0.0076.
+It: 16000. Rec. loss: 0.0077.
+It: 16500. Rec. loss: 0.0077.
+It: 17000. Rec. loss: 0.0077.
+It: 17500. Rec. loss: 0.0079.
+It: 18000. Rec. loss: 0.0077.
+It: 18500. Rec. loss: 0.0077.
+It: 19000. Rec. loss: 0.0075.
+It: 19500. Rec. loss: 0.0075.
+It: 20000. Rec. loss: 0.0075.
+It: 20500. Rec. loss: 0.0076.
+It: 21000. Rec. loss: 0.0078.
+It: 21500. Rec. loss: 0.0076.
+It: 22000. Rec. loss: 0.0077.
+It: 22500. Rec. loss: 0.0074.
+It: 23000. Rec. loss: 0.0075.
+It: 23500. Rec. loss: 0.0075.
+It: 24000. Rec. loss: 0.0075.
+It: 24500. Rec. loss: 0.0077.
+It: 25000. Rec. loss: 0.0076.
+It: 25500. Rec. loss: 0.0075.
+It: 26000. Rec. loss: 0.0076.
+It: 26500. Rec. loss: 0.0076.
+It: 27000. Rec. loss: 0.0075.
+It: 27500. Rec. loss: 0.0074.
+It: 28000. Rec. loss: 0.0075.
+It: 28500. Rec. loss: 0.0075.
+It: 29000. Rec. loss: 0.0074.
+It: 29500. Rec. loss: 0.0074.
+It: 29999. Rec. loss: 0.0075.
+Choosing optimal result ...
+Optimal result score: 0.0053
+Total time: 2697.4574518203735.
+
+=== SMART ATTACK RESULTS ===
+Round 5, Client 0 (SMART config)
+Vulnerability Score: 5.2418
+Time: 2697.5 seconds (45.0 minutes)
+Reconstruction loss: 0.0053
+Average PSNR: 22.30 dB
+Best image PSNR: 24.92 dB
+Worst image PSNR: 17.66 dB
+MSE: 0.1055
+✅ GOOD reconstruction!
+Saved to smart_federated_reconstructions/vuln_5.24_round_5_client_0_*.png
+
+[2/6] Attacking target...
+
+================================================================================
+=== SMART ATTACK: Round 5, Client 1 ===
+Vulnerability Score: 2.1825 (Loss: 1.0424, Grad Norm: 2.0938)
+Attack Config: STANDARD
+================================================================================
+Currently evaluating -------------------------------:
+Sunday, 10. August 2025 04:25PM
+CPUs: 6, GPUs: 1 on 2a37c8f1b8cb.
+GPU : NVIDIA L4
+Loading CIFAR-10 dataset...
+Loading federated data for round 5, client 1...
+Loading ground truth images...
+Setting up model from round 5, client 1...
+Model initialized with random key 1903328998.
+Target Statistics:
+  Batch indices: [9415, 6377, 8019, 4961, 7364, 5316, 4265, 6841, 5728, 2242]
+  Classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Loss: 1.0424
+  Accuracy: 60.00%
+  Gradient norm: 2.0938
+  Vulnerability: 2.1825
+
+Attack Configuration (STANDARD):
+  Learning rate: 0.1
+  Restarts: 2
+  Max iterations: 24000
+
+Starting smart reconstruction...
+It: 0. Rec. loss: 0.6974.
+It: 500. Rec. loss: 0.0107.
+It: 1000. Rec. loss: 0.0100.
+It: 1500. Rec. loss: 0.0092.
+It: 2000. Rec. loss: 0.0100.
+It: 2500. Rec. loss: 0.0101.
+It: 3000. Rec. loss: 0.0100.
+It: 3500. Rec. loss: 0.0101.
+It: 4000. Rec. loss: 0.0100.
+It: 4500. Rec. loss: 0.0103.
+It: 5000. Rec. loss: 0.0101.
+It: 5500. Rec. loss: 0.0106.
+It: 6000. Rec. loss: 0.0093.
+It: 6500. Rec. loss: 0.0109.
+It: 7000. Rec. loss: 0.0098.
+It: 7500. Rec. loss: 0.0096.
+It: 8000. Rec. loss: 0.0097.
+It: 8500. Rec. loss: 0.0100.
+It: 9000. Rec. loss: 0.0098.
+It: 9500. Rec. loss: 0.0078.
+It: 10000. Rec. loss: 0.0075.
+It: 10500. Rec. loss: 0.0075.
+It: 11000. Rec. loss: 0.0073.
+It: 11500. Rec. loss: 0.0074.
+It: 12000. Rec. loss: 0.0075.
+It: 12500. Rec. loss: 0.0074.
+It: 13000. Rec. loss: 0.0075.
+It: 13500. Rec. loss: 0.0079.
+It: 14000. Rec. loss: 0.0075.
+It: 14500. Rec. loss: 0.0077.
+It: 15000. Rec. loss: 0.0075.
+It: 15500. Rec. loss: 0.0073.
+It: 16000. Rec. loss: 0.0072.
+It: 16500. Rec. loss: 0.0072.
+It: 17000. Rec. loss: 0.0074.
+It: 17500. Rec. loss: 0.0073.
+It: 18000. Rec. loss: 0.0074.
+It: 18500. Rec. loss: 0.0074.
+It: 19000. Rec. loss: 0.0073.
+It: 19500. Rec. loss: 0.0072.
+It: 20000. Rec. loss: 0.0075.
+It: 20500. Rec. loss: 0.0074.
+It: 21000. Rec. loss: 0.0074.
+It: 21500. Rec. loss: 0.0072.
+It: 22000. Rec. loss: 0.0073.
+It: 22500. Rec. loss: 0.0072.
+It: 23000. Rec. loss: 0.0073.
+It: 23500. Rec. loss: 0.0074.
+It: 23999. Rec. loss: 0.0072.
+It: 0. Rec. loss: 0.7025.
+It: 500. Rec. loss: 0.0096.
+It: 1000. Rec. loss: 0.0110.
+It: 1500. Rec. loss: 0.0106.
+It: 2000. Rec. loss: 0.0095.
+It: 2500. Rec. loss: 0.0098.
+It: 3000. Rec. loss: 0.0102.
+It: 3500. Rec. loss: 0.0088.
+It: 4000. Rec. loss: 0.0100.
+It: 4500. Rec. loss: 0.0098.
+It: 5000. Rec. loss: 0.0096.
+It: 5500. Rec. loss: 0.0091.
+It: 6000. Rec. loss: 0.0102.
+It: 6500. Rec. loss: 0.0107.
+It: 7000. Rec. loss: 0.0094.
+It: 7500. Rec. loss: 0.0096.
+It: 8000. Rec. loss: 0.0106.
+It: 8500. Rec. loss: 0.0092.
+It: 9000. Rec. loss: 0.0084.
+It: 9500. Rec. loss: 0.0070.
+It: 10000. Rec. loss: 0.0070.
+It: 10500. Rec. loss: 0.0078.
+It: 11000. Rec. loss: 0.0071.
+It: 11500. Rec. loss: 0.0072.
+It: 12000. Rec. loss: 0.0074.
+It: 12500. Rec. loss: 0.0072.
+It: 13000. Rec. loss: 0.0071.
+It: 13500. Rec. loss: 0.0070.
+It: 14000. Rec. loss: 0.0070.
+It: 14500. Rec. loss: 0.0073.
+It: 15000. Rec. loss: 0.0074.
+It: 15500. Rec. loss: 0.0070.
+It: 16000. Rec. loss: 0.0070.
+It: 16500. Rec. loss: 0.0071.
+It: 17000. Rec. loss: 0.0070.
+It: 17500. Rec. loss: 0.0070.
+It: 18000. Rec. loss: 0.0069.
+It: 18500. Rec. loss: 0.0070.
+It: 19000. Rec. loss: 0.0070.
+It: 19500. Rec. loss: 0.0067.
+It: 20000. Rec. loss: 0.0068.
+It: 20500. Rec. loss: 0.0069.
+It: 21000. Rec. loss: 0.0070.
+It: 21500. Rec. loss: 0.0070.
+It: 22000. Rec. loss: 0.0071.
+It: 22500. Rec. loss: 0.0069.
+It: 23000. Rec. loss: 0.0069.
+It: 23500. Rec. loss: 0.0069.
+It: 23999. Rec. loss: 0.0069.
+Choosing optimal result ...
+Optimal result score: 0.0050
+Total time: 1435.3032524585724.
+
+=== SMART ATTACK RESULTS ===
+Round 5, Client 1 (STANDARD config)
+Vulnerability Score: 2.1825
+Time: 1435.3 seconds (23.9 minutes)
+Reconstruction loss: 0.0050
+Average PSNR: 19.13 dB
+Best image PSNR: 22.45 dB
+Worst image PSNR: 12.32 dB
+MSE: 0.2954
+⚠️  Fair reconstruction
+Saved to smart_federated_reconstructions/vuln_2.18_round_5_client_1_*.png
+
+[3/6] Attacking target...
+
+================================================================================
+=== SMART ATTACK: Round 1, Client 0 ===
+Vulnerability Score: 0.0726 (Loss: 2.3083, Grad Norm: 0.0314)
+Attack Config: STANDARD
+================================================================================
+Currently evaluating -------------------------------:
+Sunday, 10. August 2025 04:49PM
+CPUs: 6, GPUs: 1 on 2a37c8f1b8cb.
+GPU : NVIDIA L4
+Loading CIFAR-10 dataset...
+Loading federated data for round 1, client 0...
+Loading ground truth images...
+Setting up model from round 1, client 0...
+Model initialized with random key 2795155651.
+Target Statistics:
+  Batch indices: [6252, 4684, 1731, 4742, 4521, 6340, 6363, 9896, 9485, 9920]
+  Classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Loss: 2.3083
+  Accuracy: 10.00%
+  Gradient norm: 0.0314
+  Vulnerability: 0.0726
+
+Attack Configuration (STANDARD):
+  Learning rate: 0.1
+  Restarts: 2
+  Max iterations: 24000
+
+Starting smart reconstruction...
+It: 0. Rec. loss: 0.4156.
+It: 500. Rec. loss: 0.0611.
+It: 1000. Rec. loss: 0.0552.
+It: 1500. Rec. loss: 0.0477.
+It: 2000. Rec. loss: 0.0586.
+It: 2500. Rec. loss: 0.0498.
+It: 3000. Rec. loss: 0.0530.
+It: 3500. Rec. loss: 0.0457.
+It: 4000. Rec. loss: 0.0551.
+It: 4500. Rec. loss: 0.0565.
+It: 5000. Rec. loss: 0.0693.
+It: 5500. Rec. loss: 0.0576.
+It: 6000. Rec. loss: 0.0535.
+It: 6500. Rec. loss: 0.0492.
+It: 7000. Rec. loss: 0.0489.
+It: 7500. Rec. loss: 0.0507.
+It: 8000. Rec. loss: 0.0598.
+It: 8500. Rec. loss: 0.0414.
+It: 9000. Rec. loss: 0.0533.
+It: 9500. Rec. loss: 0.0488.
+It: 10000. Rec. loss: 0.0413.
+It: 10500. Rec. loss: 0.0397.
+It: 11000. Rec. loss: 0.0585.
+It: 11500. Rec. loss: 0.0641.
+It: 12000. Rec. loss: 0.0554.
+It: 12500. Rec. loss: 0.0582.
+It: 13000. Rec. loss: 0.0574.
+It: 13500. Rec. loss: 0.0633.
+It: 14000. Rec. loss: 0.0565.
+It: 14500. Rec. loss: 0.0556.
+It: 15000. Rec. loss: 0.0644.
+It: 15500. Rec. loss: 0.0507.
+It: 16000. Rec. loss: 0.0647.
+It: 16500. Rec. loss: 0.0466.
+It: 17000. Rec. loss: 0.0485.
+It: 17500. Rec. loss: 0.0473.
+It: 18000. Rec. loss: 0.0440.
+It: 18500. Rec. loss: 0.0516.
+It: 19000. Rec. loss: 0.0469.
+It: 19500. Rec. loss: 0.0494.
+It: 20000. Rec. loss: 0.0505.
+It: 20500. Rec. loss: 0.0526.
+It: 21000. Rec. loss: 0.0497.
+It: 21500. Rec. loss: 0.0475.
+It: 22000. Rec. loss: 0.0444.
+It: 22500. Rec. loss: 0.0459.
+It: 23000. Rec. loss: 0.0485.
+It: 23500. Rec. loss: 0.0513.
+It: 23999. Rec. loss: 0.0491.
+It: 0. Rec. loss: 0.4413.
+It: 500. Rec. loss: 0.0583.
+It: 1000. Rec. loss: 0.0606.
+It: 1500. Rec. loss: 0.0494.
+It: 2000. Rec. loss: 0.0544.
+It: 2500. Rec. loss: 0.0667.
+It: 3000. Rec. loss: 0.0520.
+It: 3500. Rec. loss: 0.0696.
+It: 4000. Rec. loss: 0.0528.
+It: 4500. Rec. loss: 0.0603.
+It: 5000. Rec. loss: 0.0555.
+It: 5500. Rec. loss: 0.0465.
+It: 6000. Rec. loss: 0.0531.
+It: 6500. Rec. loss: 0.0551.
+It: 7000. Rec. loss: 0.0505.
+It: 7500. Rec. loss: 0.0543.
+It: 8000. Rec. loss: 0.0463.
+It: 8500. Rec. loss: 0.0573.
+It: 9000. Rec. loss: 0.0484.
+It: 9500. Rec. loss: 0.0549.
+It: 10000. Rec. loss: 0.0488.
+It: 10500. Rec. loss: 0.0456.
+It: 11000. Rec. loss: 0.0413.
+It: 11500. Rec. loss: 0.0502.
+It: 12000. Rec. loss: 0.0578.
+It: 12500. Rec. loss: 0.0501.
+It: 13000. Rec. loss: 0.0516.
+It: 13500. Rec. loss: 0.0453.
+It: 14000. Rec. loss: 0.0466.
+It: 14500. Rec. loss: 0.0528.
+It: 15000. Rec. loss: 0.0497.
+It: 15500. Rec. loss: 0.0506.
+It: 16000. Rec. loss: 0.0524.
+It: 16500. Rec. loss: 0.0460.
+It: 17000. Rec. loss: 0.0637.
+It: 17500. Rec. loss: 0.0473.
+It: 18000. Rec. loss: 0.0472.
+It: 18500. Rec. loss: 0.0516.
+It: 19000. Rec. loss: 0.0570.
+It: 19500. Rec. loss: 0.0504.
+It: 20000. Rec. loss: 0.0538.
+It: 20500. Rec. loss: 0.0506.
+It: 21000. Rec. loss: 0.0427.
+It: 21500. Rec. loss: 0.0432.
+It: 22000. Rec. loss: 0.0578.
+It: 22500. Rec. loss: 0.0582.
+It: 23000. Rec. loss: 0.0506.
+It: 23500. Rec. loss: 0.0555.
+It: 23999. Rec. loss: 0.0510.
+Choosing optimal result ...
+Optimal result score: 0.0470
+Total time: 1433.5665545463562.
+
+=== SMART ATTACK RESULTS ===
+Round 1, Client 0 (STANDARD config)
+Vulnerability Score: 0.0726
+Time: 1433.6 seconds (23.9 minutes)
+Reconstruction loss: 0.0470
+Average PSNR: 22.91 dB
+Best image PSNR: 24.27 dB
+Worst image PSNR: 21.03 dB
+MSE: 0.0843
+✅ GOOD reconstruction!
+Saved to smart_federated_reconstructions/vuln_0.07_round_1_client_0_*.png
+
+[4/6] Attacking target...
+
+================================================================================
+=== SMART ATTACK: Round 1, Client 1 ===
+Vulnerability Score: 0.0642 (Loss: 2.3120, Grad Norm: 0.0278)
+Attack Config: STANDARD
+================================================================================
+Currently evaluating -------------------------------:
+Sunday, 10. August 2025 05:13PM
+CPUs: 6, GPUs: 1 on 2a37c8f1b8cb.
+GPU : NVIDIA L4
+Loading CIFAR-10 dataset...
+Loading federated data for round 1, client 1...
+Loading ground truth images...
+Setting up model from round 1, client 1...
+Model initialized with random key 3133049078.
+Target Statistics:
+  Batch indices: [9415, 6377, 8019, 4961, 7364, 5316, 4265, 6841, 5728, 2242]
+  Classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Loss: 2.3120
+  Accuracy: 20.00%
+  Gradient norm: 0.0278
+  Vulnerability: 0.0642
+
+Attack Configuration (STANDARD):
+  Learning rate: 0.1
+  Restarts: 2
+  Max iterations: 24000
+
+Starting smart reconstruction...
+It: 0. Rec. loss: 0.2313.
+It: 500. Rec. loss: 0.0542.
+It: 1000. Rec. loss: 0.0583.
+It: 1500. Rec. loss: 0.0443.
+It: 2000. Rec. loss: 0.0569.
+It: 2500. Rec. loss: 0.0475.
+It: 3000. Rec. loss: 0.0547.
+It: 3500. Rec. loss: 0.0410.
+It: 4000. Rec. loss: 0.0470.
+It: 4500. Rec. loss: 0.0456.
+It: 5000. Rec. loss: 0.0502.
+It: 5500. Rec. loss: 0.0437.
+It: 6000. Rec. loss: 0.0450.
+It: 6500. Rec. loss: 0.0489.
+It: 7000. Rec. loss: 0.0638.
+It: 7500. Rec. loss: 0.0612.
+It: 8000. Rec. loss: 0.0551.
+It: 8500. Rec. loss: 0.0441.
+It: 9000. Rec. loss: 0.0548.
+It: 9500. Rec. loss: 0.0519.
+It: 10000. Rec. loss: 0.0398.
+It: 10500. Rec. loss: 0.0495.
+It: 11000. Rec. loss: 0.0532.
+It: 11500. Rec. loss: 0.0466.
+It: 12000. Rec. loss: 0.0504.
+It: 12500. Rec. loss: 0.0469.
+It: 13000. Rec. loss: 0.0469.
+It: 13500. Rec. loss: 0.0488.
+It: 14000. Rec. loss: 0.0527.
+It: 14500. Rec. loss: 0.0577.
+It: 15000. Rec. loss: 0.0529.
+It: 15500. Rec. loss: 0.0515.
+It: 16000. Rec. loss: 0.0563.
+It: 16500. Rec. loss: 0.0505.
+It: 17000. Rec. loss: 0.0483.
+It: 17500. Rec. loss: 0.0526.
+It: 18000. Rec. loss: 0.0476.
+It: 18500. Rec. loss: 0.0490.
+It: 19000. Rec. loss: 0.0476.
+It: 19500. Rec. loss: 0.0481.
+It: 20000. Rec. loss: 0.0514.
+It: 20500. Rec. loss: 0.0467.
+It: 21000. Rec. loss: 0.0480.
+It: 21500. Rec. loss: 0.0490.
+It: 22000. Rec. loss: 0.0483.
+It: 22500. Rec. loss: 0.0471.
+It: 23000. Rec. loss: 0.0489.
+It: 23500. Rec. loss: 0.0471.
+It: 23999. Rec. loss: 0.0475.
+It: 0. Rec. loss: 0.2349.
+It: 500. Rec. loss: 0.0510.
+It: 1000. Rec. loss: 0.0538.
+It: 1500. Rec. loss: 0.0491.
+It: 2000. Rec. loss: 0.0513.
+It: 2500. Rec. loss: 0.0570.
+It: 3000. Rec. loss: 0.0558.
+It: 3500. Rec. loss: 0.0449.
+It: 4000. Rec. loss: 0.0463.
+It: 4500. Rec. loss: 0.0498.
+It: 5000. Rec. loss: 0.0613.
+It: 5500. Rec. loss: 0.0545.
+It: 6000. Rec. loss: 0.0452.
+It: 6500. Rec. loss: 0.0560.
+It: 7000. Rec. loss: 0.0565.
+It: 7500. Rec. loss: 0.0392.
+It: 8000. Rec. loss: 0.0560.
+It: 8500. Rec. loss: 0.0555.
+It: 9000. Rec. loss: 0.0458.
+It: 9500. Rec. loss: 0.0463.
+It: 10000. Rec. loss: 0.0424.
+It: 10500. Rec. loss: 0.0416.
+It: 11000. Rec. loss: 0.0451.
+It: 11500. Rec. loss: 0.0464.
+It: 12000. Rec. loss: 0.0482.
+It: 12500. Rec. loss: 0.0533.
+It: 13000. Rec. loss: 0.0449.
+It: 13500. Rec. loss: 0.0407.
+It: 14000. Rec. loss: 0.0475.
+It: 14500. Rec. loss: 0.0502.
+It: 15000. Rec. loss: 0.0408.
+It: 15500. Rec. loss: 0.0425.
+It: 16000. Rec. loss: 0.0500.
+It: 16500. Rec. loss: 0.0485.
+It: 17000. Rec. loss: 0.0431.
+It: 17500. Rec. loss: 0.0486.
+It: 18000. Rec. loss: 0.0444.
+It: 18500. Rec. loss: 0.0439.
+It: 19000. Rec. loss: 0.0391.
+It: 19500. Rec. loss: 0.0426.
+It: 20000. Rec. loss: 0.0403.
+It: 20500. Rec. loss: 0.0501.
+It: 21000. Rec. loss: 0.0478.
+It: 21500. Rec. loss: 0.0482.
+It: 22000. Rec. loss: 0.0474.
+It: 22500. Rec. loss: 0.0478.
+It: 23000. Rec. loss: 0.0480.
+It: 23500. Rec. loss: 0.0482.
+It: 23999. Rec. loss: 0.0475.
+Choosing optimal result ...
+Optimal result score: 0.0445
+Total time: 1426.8862733840942.
+
+=== SMART ATTACK RESULTS ===
+Round 1, Client 1 (STANDARD config)
+Vulnerability Score: 0.0642
+Time: 1426.9 seconds (23.8 minutes)
+Reconstruction loss: 0.0445
+Average PSNR: 21.02 dB
+Best image PSNR: 25.35 dB
+Worst image PSNR: 17.45 dB
+MSE: 0.1394
+✅ GOOD reconstruction!
+Saved to smart_federated_reconstructions/vuln_0.06_round_1_client_1_*.png
+
+[5/6] Attacking target...
+
+================================================================================
+=== SMART ATTACK: Round 10, Client 1 ===
+Vulnerability Score: 0.0227 (Loss: 0.0311, Grad Norm: 0.7284)
+Attack Config: STANDARD
+================================================================================
+Currently evaluating -------------------------------:
+Sunday, 10. August 2025 05:37PM
+CPUs: 6, GPUs: 1 on 2a37c8f1b8cb.
+GPU : NVIDIA L4
+Loading CIFAR-10 dataset...
+Loading federated data for round 10, client 1...
+Loading ground truth images...
+Setting up model from round 10, client 1...
+Model initialized with random key 313110782.
+Target Statistics:
+  Batch indices: [9415, 6377, 8019, 4961, 7364, 5316, 4265, 6841, 5728, 2242]
+  Classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Loss: 0.0311
+  Accuracy: 100.00%
+  Gradient norm: 0.7284
+  Vulnerability: 0.0227
+
+Attack Configuration (STANDARD):
+  Learning rate: 0.1
+  Restarts: 2
+  Max iterations: 24000
+
+Starting smart reconstruction...
+It: 0. Rec. loss: 1.1426.
+It: 500. Rec. loss: 0.0090.
+It: 1000. Rec. loss: 0.0108.
+It: 1500. Rec. loss: 0.0091.
+It: 2000. Rec. loss: 0.0089.
+It: 2500. Rec. loss: 0.0207.
+It: 3000. Rec. loss: 0.0093.
+It: 3500. Rec. loss: 0.0104.
+It: 4000. Rec. loss: 0.0110.
+It: 4500. Rec. loss: 0.0086.
+It: 5000. Rec. loss: 0.0097.
+It: 5500. Rec. loss: 0.0103.
+It: 6000. Rec. loss: 0.0083.
+It: 6500. Rec. loss: 0.0091.
+It: 7000. Rec. loss: 0.0092.
+It: 7500. Rec. loss: 0.0094.
+It: 8000. Rec. loss: 0.0098.
+It: 8500. Rec. loss: 0.0087.
+It: 9000. Rec. loss: 0.0082.
+It: 9500. Rec. loss: 0.0043.
+It: 10000. Rec. loss: 0.0041.
+It: 10500. Rec. loss: 0.0040.
+It: 11000. Rec. loss: 0.0038.
+It: 11500. Rec. loss: 0.0043.
+It: 12000. Rec. loss: 0.0044.
+It: 12500. Rec. loss: 0.0048.
+It: 13000. Rec. loss: 0.0040.
+It: 13500. Rec. loss: 0.0037.
+It: 14000. Rec. loss: 0.0047.
+It: 14500. Rec. loss: 0.0045.
+It: 15000. Rec. loss: 0.0048.
+It: 15500. Rec. loss: 0.0035.
+It: 16000. Rec. loss: 0.0035.
+It: 16500. Rec. loss: 0.0031.
+It: 17000. Rec. loss: 0.0034.
+It: 17500. Rec. loss: 0.0039.
+It: 18000. Rec. loss: 0.0030.
+It: 18500. Rec. loss: 0.0036.
+It: 19000. Rec. loss: 0.0030.
+It: 19500. Rec. loss: 0.0028.
+It: 20000. Rec. loss: 0.0034.
+It: 20500. Rec. loss: 0.0029.
+It: 21000. Rec. loss: 0.0031.
+It: 21500. Rec. loss: 0.0031.
+It: 22000. Rec. loss: 0.0035.
+It: 22500. Rec. loss: 0.0033.
+It: 23000. Rec. loss: 0.0036.
+It: 23500. Rec. loss: 0.0031.
+It: 23999. Rec. loss: 0.0034.
+It: 0. Rec. loss: 1.1449.
+It: 500. Rec. loss: 0.0090.
+It: 1000. Rec. loss: 0.0093.
+It: 1500. Rec. loss: 0.0117.
+It: 2000. Rec. loss: 0.0092.
+It: 2500. Rec. loss: 0.0084.
+It: 3000. Rec. loss: 0.0087.
+It: 3500. Rec. loss: 0.0078.
+It: 4000. Rec. loss: 0.0089.
+It: 4500. Rec. loss: 0.0084.
+It: 5000. Rec. loss: 0.0082.
+It: 5500. Rec. loss: 0.0092.
+It: 6000. Rec. loss: 0.0086.
+It: 6500. Rec. loss: 0.0099.
+It: 7000. Rec. loss: 0.0099.
+It: 7500. Rec. loss: 0.0091.
+It: 8000. Rec. loss: 0.0104.
+It: 8500. Rec. loss: 0.0234.
+It: 9000. Rec. loss: 0.0092.
+It: 9500. Rec. loss: 0.0039.
+It: 10000. Rec. loss: 0.0040.
+It: 10500. Rec. loss: 0.0041.
+It: 11000. Rec. loss: 0.0049.
+It: 11500. Rec. loss: 0.0039.
+It: 12000. Rec. loss: 0.0036.
+It: 12500. Rec. loss: 0.0034.
+It: 13000. Rec. loss: 0.0054.
+It: 13500. Rec. loss: 0.0039.
+It: 14000. Rec. loss: 0.0039.
+It: 14500. Rec. loss: 0.0036.
+It: 15000. Rec. loss: 0.0040.
+It: 15500. Rec. loss: 0.0031.
+It: 16000. Rec. loss: 0.0036.
+It: 16500. Rec. loss: 0.0037.
+It: 17000. Rec. loss: 0.0035.
+It: 17500. Rec. loss: 0.0032.
+It: 18000. Rec. loss: 0.0033.
+It: 18500. Rec. loss: 0.0035.
+It: 19000. Rec. loss: 0.0036.
+It: 19500. Rec. loss: 0.0033.
+It: 20000. Rec. loss: 0.0032.
+It: 20500. Rec. loss: 0.0032.
+It: 21000. Rec. loss: 0.0035.
+It: 21500. Rec. loss: 0.0034.
+It: 22000. Rec. loss: 0.0033.
+It: 22500. Rec. loss: 0.0034.
+It: 23000. Rec. loss: 0.0035.
+It: 23500. Rec. loss: 0.0033.
+It: 23999. Rec. loss: 0.0033.
+Choosing optimal result ...
+Optimal result score: 0.0025
+Total time: 1434.238781452179.
+
+=== SMART ATTACK RESULTS ===
+Round 10, Client 1 (STANDARD config)
+Vulnerability Score: 0.0227
+Time: 1434.2 seconds (23.9 minutes)
+Reconstruction loss: 0.0025
+Average PSNR: 12.55 dB
+Best image PSNR: 27.30 dB
+Worst image PSNR: 5.17 dB
+MSE: 1.4656
+❌ Poor reconstruction
+Saved to smart_federated_reconstructions/vuln_0.02_round_10_client_1_*.png
+
+[6/6] Attacking target...
+
+================================================================================
+=== SMART ATTACK: Round 10, Client 0 ===
+Vulnerability Score: 0.0001 (Loss: 0.0024, Grad Norm: 0.0223)
+Attack Config: STANDARD
+================================================================================
+Currently evaluating -------------------------------:
+Sunday, 10. August 2025 06:01PM
+CPUs: 6, GPUs: 1 on 2a37c8f1b8cb.
+GPU : NVIDIA L4
+Loading CIFAR-10 dataset...
+Loading federated data for round 10, client 0...
+Loading ground truth images...
+Setting up model from round 10, client 0...
+Model initialized with random key 2247689074.
+Target Statistics:
+  Batch indices: [6252, 4684, 1731, 4742, 4521, 6340, 6363, 9896, 9485, 9920]
+  Classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Loss: 0.0024
+  Accuracy: 100.00%
+  Gradient norm: 0.0223
+  Vulnerability: 0.0001
+
+Attack Configuration (STANDARD):
+  Learning rate: 0.1
+  Restarts: 2
+  Max iterations: 24000
+
+Starting smart reconstruction...
+It: 0. Rec. loss: 1.2662.
+It: 500. Rec. loss: 0.1343.
+It: 1000. Rec. loss: 0.1469.
+It: 1500. Rec. loss: 0.1533.
+It: 2000. Rec. loss: 0.1370.
+It: 2500. Rec. loss: 0.1471.
+It: 3000. Rec. loss: 0.1692.
+It: 3500. Rec. loss: 0.1865.
+It: 4000. Rec. loss: 0.1684.
+It: 4500. Rec. loss: 0.1698.
+It: 5000. Rec. loss: 0.1620.
+It: 5500. Rec. loss: 0.1185.
+It: 6000. Rec. loss: 0.2128.
+It: 6500. Rec. loss: 0.2381.
+It: 7000. Rec. loss: 0.2139.
+It: 7500. Rec. loss: 0.2031.
+It: 8000. Rec. loss: 0.2352.
+It: 8500. Rec. loss: 0.1988.
+It: 9000. Rec. loss: 0.2087.
+It: 9500. Rec. loss: 0.0254.
+It: 10000. Rec. loss: 0.0242.
+It: 10500. Rec. loss: 0.0240.
+It: 11000. Rec. loss: 0.0235.
+It: 11500. Rec. loss: 0.0218.
+It: 12000. Rec. loss: 0.0216.
+It: 12500. Rec. loss: 0.0224.
+It: 13000. Rec. loss: 0.0214.
+It: 13500. Rec. loss: 0.0181.
+It: 14000. Rec. loss: 0.0165.
+It: 14500. Rec. loss: 0.0158.
+It: 15000. Rec. loss: 0.0158.
+It: 15500. Rec. loss: 0.0135.
+It: 16000. Rec. loss: 0.0119.
+It: 16500. Rec. loss: 0.0113.
+It: 17000. Rec. loss: 0.0108.
+It: 17500. Rec. loss: 0.0101.
+It: 18000. Rec. loss: 0.0095.
+It: 18500. Rec. loss: 0.0086.
+It: 19000. Rec. loss: 0.0084.
+It: 19500. Rec. loss: 0.0083.
+It: 20000. Rec. loss: 0.0083.
+It: 20500. Rec. loss: 0.0080.
+It: 21000. Rec. loss: 0.0078.
+It: 21500. Rec. loss: 0.0076.
+It: 22000. Rec. loss: 0.0076.
+It: 22500. Rec. loss: 0.0078.
+It: 23000. Rec. loss: 0.0077.
+It: 23500. Rec. loss: 0.0078.
+It: 23999. Rec. loss: 0.0078.
+It: 0. Rec. loss: 1.2611.
+It: 500. Rec. loss: 0.0842.
+It: 1000. Rec. loss: 0.2543.
+It: 1500. Rec. loss: 0.2718.
+It: 2000. Rec. loss: 0.2175.
+It: 2500. Rec. loss: 0.2503.
+It: 3000. Rec. loss: 0.2382.
+It: 3500. Rec. loss: 0.1462.
+It: 4000. Rec. loss: 0.1928.
+It: 4500. Rec. loss: 0.2935.
+It: 5000. Rec. loss: 0.3012.
+It: 5500. Rec. loss: 0.2864.
+It: 6000. Rec. loss: 0.2860.
+It: 6500. Rec. loss: 0.3003.
+It: 7000. Rec. loss: 0.1532.
+It: 7500. Rec. loss: 0.1959.
+It: 8000. Rec. loss: 0.1423.
+It: 8500. Rec. loss: 0.0880.
+It: 9000. Rec. loss: 0.0885.
+It: 9500. Rec. loss: 0.0249.
+It: 10000. Rec. loss: 0.0242.
+It: 10500. Rec. loss: 0.0236.
+It: 11000. Rec. loss: 0.0229.
+It: 11500. Rec. loss: 0.0224.
+It: 12000. Rec. loss: 0.0236.
+It: 12500. Rec. loss: 0.0198.
+It: 13000. Rec. loss: 0.0204.
+It: 13500. Rec. loss: 0.0201.
+It: 14000. Rec. loss: 0.0195.
+It: 14500. Rec. loss: 0.0196.
+It: 15000. Rec. loss: 0.0199.
+It: 15500. Rec. loss: 0.0156.
+It: 16000. Rec. loss: 0.0138.
+It: 16500. Rec. loss: 0.0121.
+It: 17000. Rec. loss: 0.0119.
+It: 17500. Rec. loss: 0.0106.
+It: 18000. Rec. loss: 0.0103.
+It: 18500. Rec. loss: 0.0104.
+It: 19000. Rec. loss: 0.0097.
+It: 19500. Rec. loss: 0.0090.
+It: 20000. Rec. loss: 0.0078.
+It: 20500. Rec. loss: 0.0078.
+It: 21000. Rec. loss: 0.0079.
+It: 21500. Rec. loss: 0.0079.
+It: 22000. Rec. loss: 0.0079.
+It: 22500. Rec. loss: 0.0080.
+It: 23000. Rec. loss: 0.0075.
+It: 23500. Rec. loss: 0.0079.
+It: 23999. Rec. loss: 0.0079.
+Choosing optimal result ...
+Optimal result score: 0.0064
+Total time: 1432.384124994278.
+
+=== SMART ATTACK RESULTS ===
+Round 10, Client 0 (STANDARD config)
+Vulnerability Score: 0.0001
+Time: 1432.4 seconds (23.9 minutes)
+Reconstruction loss: 0.0064
+Average PSNR: 17.71 dB
+Best image PSNR: 34.37 dB
+Worst image PSNR: 8.96 dB
+MSE: 0.6954
+⚠️  Fair reconstruction
+Saved to smart_federated_reconstructions/vuln_0.00_round_10_client_0_*.png
+
+==========================================================================================
+=== SMART ATTACK SUMMARY ===
+==========================================================================================
+Rank  Round  Client  Vuln       Config    PSNR     Time(m)  Quality     
+------------------------------------------------------------------------------------------
+1     5      0       5.2418     SMART     22.30    45.0     GOOD        
+2     5      1       2.1825     STANDARD  19.13    23.9     FAIR        
+3     1      0       0.0726     STANDARD  22.91    23.9     GOOD        
+4     1      1       0.0642     STANDARD  21.02    23.8     GOOD        
+5     10     1       0.0227     STANDARD  12.55    23.9     POOR        
+6     10     0       0.0001     STANDARD  17.71    23.9     FAIR        
+
+🏆 BEST RECONSTRUCTION:
+   Round 1, Client 0
+   Vulnerability: 0.0726
+   PSNR: 22.91 dB
+   Config: STANDARD
+
+📊 VULNERABILITY EFFECTIVENESS:
+   High vulnerability (>5.0): Avg PSNR = 22.30 dB
+   Low vulnerability (≤5.0): Avg PSNR = 18.66 dB
+   Smart targeting gain: 3.64 dB
+
+✅ Smart federated attack complete!
+Check 'smart_federated_reconstructions/' for results
+Files are named with vulnerability scores for easy identification
